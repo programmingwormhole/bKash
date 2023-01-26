@@ -1,5 +1,5 @@
+import 'package:bkash/pages/auth/setProfilePhoto/SetProfilePhoto.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 import '../../../units/stringData.dart';
 
@@ -28,15 +28,14 @@ class _EnterNameState extends State<EnterName> {
               Icons.arrow_back,
               color: Colors.pink,
             )),
-        actions: const [
+        actions: [
           Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Skip',
-                style:
-                    TextStyle(fontWeight: FontWeight.w300, color: Colors.pink),
-              )),
-          SizedBox(
+            padding: const EdgeInsets.all(8.0),
+            child: TextButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const SetProfilePhoto()));
+            }, child: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w300, color: Colors.pink),)),
+          ),
+          const SizedBox(
             width: 1,
           )
         ],
@@ -103,17 +102,17 @@ class _EnterNameState extends State<EnterName> {
                   onChanged: (value) {
                     if (value.isEmpty) {
                       setState(() {
-                        buttonActive = true;
+                        buttonActive = false;
                       });
                     } else {
                       setState(() {
-                        buttonActive = false;
+                        buttonActive = true;
                       });
                     }
                   },
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your last name';
+                      return 'Please enter your first name';
                     }
                     return null;
                   },
@@ -132,11 +131,11 @@ class _EnterNameState extends State<EnterName> {
                   onChanged: (value) {
                     if (value.isEmpty) {
                       setState(() {
-                        buttonActive = true;
+                        buttonActive = false;
                       });
                     } else {
                       setState(() {
-                        buttonActive = false;
+                        buttonActive = true;
                       });
                     }
                   },
@@ -147,7 +146,7 @@ class _EnterNameState extends State<EnterName> {
                     }
                     return null;
                   },
-                  style: const TextStyle(color: Colors.black, fontSize: 20),
+                  // style: const TextStyle(color: Colors.black, fontSize: 20),
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                       hintText: 'Enter your last name',
@@ -166,15 +165,18 @@ class _EnterNameState extends State<EnterName> {
             padding: const EdgeInsets.symmetric(vertical: 12),
             shape: const RoundedRectangleBorder(),
             backgroundColor:
-                buttonActive ? Colors.grey.withOpacity(0.5) : Colors.pink ,
+                buttonActive ? Colors.pink : Colors.grey.withOpacity(0.5),
+            // backgroundColor:
+            //     buttonActive ? Colors.grey.withOpacity(0.5) : Colors.pink ,
             // padding: EdgeInsets.only(left: 500, right: 500)
           ),
           onPressed: () {
             if (_formKey.currentState!.validate()) {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const EnterName()));
-            }
-            else if(_globalNew.currentState!.validate()){            }
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SetProfilePhoto()));
+            } else if (_globalNew.currentState!.validate()) {}
           },
           child: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
