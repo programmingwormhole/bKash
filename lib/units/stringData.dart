@@ -10,7 +10,7 @@ class StringValue {
   String appName = "bKash";
   String defaultCountry = 'BD';
   String lanBng = 'বাংলা';
-  String tapBalance = 'Tap for Balance';
+  String tapBalance = ' Tap for Balance';
   String currencySymbol = '৳';
   String userBalance = '৳ ৫,০০০.৬৮';
   String entPhone = 'Enter mobile number';
@@ -28,21 +28,19 @@ class StringValue {
   String setNameDis = 'Your name will appear on your bKash App home screen.';
   String setNameDis2 = 'Only you can see this.';
   String setPP = 'Add your profile picture';
-
-  String setPPdis =
-      'Tap below add icon (+) to take a photo or upload your picture.';
-  String ppVisible = 'Make my picture visible to others bKash App users.';
+  String setPPdis = 'Tap below add icon (+) to take a photo or upload your picture.';
+  String ppVisible = 'Make my picture visible to others users.';
   String firstName = 'First Name';
   String lastName = 'Last Name';
   String toYourAcc = 'to your bKash account';
   String accPin = 'bKash PIN';
   String forgotPin = 'Forgot PIN?';
+  String verifyCode = 'Verification code has been sent to';
+  String mblNbr = "017xxxxxxxx ";
 
   // Styling Section
   TextStyle labelStyle = TextStyle(
       fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.6));
-  String verifyCode = 'Verification code has been sent to';
-  String mblNbr = "017xxxxxxxx ";
   TextButton cngBtn = TextButton(
       onPressed: () {},
       child: const Text(

@@ -13,6 +13,7 @@ class verifyNumber extends StatefulWidget {
 class _verifyNumberState extends State<verifyNumber> {
   final OtpFieldController _otpFieldController = OtpFieldController();
   bool enable = false;
+  bool buttonActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -79,13 +80,15 @@ class _verifyNumberState extends State<verifyNumber> {
                 length: 6,
                 controller: _otpFieldController,
                 onChanged: (value) {
-                  if (_otpFieldController.toString().length == 6) {
+                  if (value.length == 6) {
                     setState(() {
                       enable = true;
+                      buttonActive = true;
                     });
                   } else {
                     setState(() {
                       enable = false;
+                      buttonActive = false;
                     });
                   }
                 },
@@ -135,12 +138,14 @@ class _verifyNumberState extends State<verifyNumber> {
           style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 12),
             shape: const RoundedRectangleBorder(),
-            backgroundColor: enable ? Colors.grey : Colors.pink,
+            backgroundColor: enable ? Colors.pink : Colors.grey,
             // padding: EdgeInsets.only(left: 500, right: 500)
           ),
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const EnterPin()));
+            if (buttonActive == true) {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const EnterPin()));
+            }
           },
           child: Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),

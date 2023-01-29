@@ -17,7 +17,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     return Container(
       height: 80,
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width,
       decoration: const BoxDecoration(
           color: Colors.pink,
           borderRadius: BorderRadius.only(
@@ -27,7 +27,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         padding: const EdgeInsets.only(left: 15, right: 15),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CircleAvatar(
                 backgroundColor: Colors.white,
@@ -36,9 +36,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   borderRadius: BorderRadius.circular(50),
                   child: Image.asset('assets/images/profilePicture.jpg'),
                 )),
-            const SizedBox(
-              width: 15,
-            ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,24 +105,18 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         ])))
               ],
             ),
-            const SizedBox(width: 50),
-           Row(
-             crossAxisAlignment: CrossAxisAlignment.start,
-             mainAxisAlignment: MainAxisAlignment.end,
-             children: [
-               Image.asset(
-                 'assets/HomePage/trophy.png',
-                 height: 40,
-               ),
-               const SizedBox(
-                 width: 10,
-               ),
-               Image.asset(
-                 'assets/HomePage/fly.png',
-                 height: 40,
-               ),
-             ],
-           )
+
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+
+                Image.asset(
+                  'assets/HomePage/fly.png',
+                  height: 40,
+                ),
+              ],
+            )
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:bkash/pages/HomePages/HomePage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -92,7 +93,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
             TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomePage()));
+                },
                 child: const Text(
                   'বিকাশ অ্যাপ ঘুরে দেখুন',
                   style: TextStyle(

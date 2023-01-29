@@ -135,6 +135,9 @@ class _SetProfilePhotoState extends State<SetProfilePhoto> {
                   ],
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+
                   children: [
                     Checkbox(
                       checkColor: Colors.white,

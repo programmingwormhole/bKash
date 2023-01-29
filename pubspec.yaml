@@ -43,7 +43,6 @@ dependencies:
   lottie: ^2.2.0
 
 
-
 flutter_native_splash:
   image: assets/images/bKash_logo.png
   color: "#FF007F"
@@ -74,6 +73,7 @@ flutter:
   assets:
   - assets/images/
   - assets/HomePage/
+  - assets/mainIcon/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
