@@ -27,7 +27,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         padding: const EdgeInsets.only(left: 15, right: 15),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CircleAvatar(
                 backgroundColor: Colors.white,
@@ -36,7 +36,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   borderRadius: BorderRadius.circular(50),
                   child: Image.asset('assets/images/profilePicture.jpg'),
                 )),
-
+            const SizedBox(
+              width: 20
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -105,18 +107,13 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         ])))
               ],
             ),
-
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-
-                Image.asset(
-                  'assets/HomePage/fly.png',
-                  height: 40,
-                ),
-              ],
-            )
+            const SizedBox(
+                width: 80
+            ),
+            Image.asset(
+              'assets/HomePage/fly.png',
+              height: 40,
+            ),
           ],
         ),
       ),

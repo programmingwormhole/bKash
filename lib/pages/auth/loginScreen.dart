@@ -29,7 +29,6 @@ class _loginScreenState extends State<loginScreen> {
   @override
   Widget build(BuildContext context) {
 
-    bool buttonActive = false;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -37,7 +36,9 @@ class _loginScreenState extends State<loginScreen> {
         backgroundColor: Colors.white24,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(
               Icons.arrow_back,
               color: Colors.pink,
@@ -112,14 +113,7 @@ class _loginScreenState extends State<loginScreen> {
                   });
                 }
               },
-              // onChanged: (data) {
-              //   if (_inputController.text.isEmpty) {
-              //     enable = false;
-              //   } else {
-              //     enable = true;
-              //   }
-              //   setState(() {});
-              // },
+
               initialCountryCode: StringValue().defaultCountry,
               decoration: InputDecoration(
                   hintText: StringValue().hintText,
@@ -146,7 +140,7 @@ class _loginScreenState extends State<loginScreen> {
       ),
       bottomNavigationBar:
       SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: TextButton(
             style: TextButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 12),
@@ -157,7 +151,7 @@ class _loginScreenState extends State<loginScreen> {
             onPressed: enable
                 ? () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const verifyNumber()));
+                        MaterialPageRoute(builder: (context) => verifyNumber(number: _inputController.text,)));
                   }
                 : () {},
             child: Padding(

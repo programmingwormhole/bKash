@@ -64,10 +64,12 @@ class _EnterPinState extends State<EnterPin> {
                     StringValue().loginLogo,
                     height: 45,
                   ),
-                  Lottie.network('https://assets10.lottiefiles.com/packages/lf20_hrczfk4y.json', height: 60, width: 60)
+                  Lottie.network(
+                      'https://assets10.lottiefiles.com/packages/lf20_hrczfk4y.json',
+                      height: 60,
+                      width: 60)
                 ],
               ),
-             
               const SizedBox(
                 height: 20,
               ),
@@ -114,15 +116,12 @@ class _EnterPinState extends State<EnterPin> {
               Form(
                 key: _formKey,
                 child: TextFormField(
-                  onChanged: (value){
-                    if(
-                    value.length == 6
-                    ){
+                  onChanged: (value) {
+                    if (value.length == 6) {
                       setState(() {
                         buttonActive = true;
-                      }
-                      );
-                    }else{
+                      });
+                    } else {
                       setState(() {
                         buttonActive = false;
                       });
@@ -157,7 +156,7 @@ class _EnterPinState extends State<EnterPin> {
           style: TextButton.styleFrom(
             padding: const EdgeInsets.symmetric(vertical: 12),
             shape: const RoundedRectangleBorder(),
-            backgroundColor: buttonActive ? Colors.pink: Colors.grey,
+            backgroundColor: buttonActive ? Colors.pink : Colors.grey,
             // padding: EdgeInsets.only(left: 500, right: 500)
           ),
           onPressed: () {

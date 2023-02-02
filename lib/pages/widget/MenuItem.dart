@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget menuItem(String menuIcon, String name) {
+Widget menuItem(String menuIcon, String name, onTapFun) {
   return InkWell(
-    onTap: () {
-
-    },
+    onTap: onTapFun,
     child: Column(
       children: [
         Image.asset(menuIcon,

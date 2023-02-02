@@ -2,7 +2,7 @@ import 'package:bkash/pages/HomePages/HomePage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import 'auth/loginScreen.dart';
+import '../auth/loginScreen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -62,11 +62,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 50,
             ),
             const Text(
-              'আপনার NID দিয়ে বিকাশ',
+              'Create account with your NID',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
             ),
             const Text(
-              'একাউন্ট খুলুন মিনিটেই',
+              'Within a minutes',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
             ),
             const SizedBox(
@@ -88,7 +88,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         builder: (context) => const loginScreen()));
               },
               child: const Text(
-                "লগ ইন / রেজিস্ট্রেশন",
+                "Login / Registration",
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
             ),
@@ -98,7 +98,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       MaterialPageRoute(builder: (context) => HomePage()));
                 },
                 child: const Text(
-                  'বিকাশ অ্যাপ ঘুরে দেখুন',
+                  'Visit the apps!',
                   style: TextStyle(
                       color: Colors.pink, fontWeight: FontWeight.w500),
                 ))

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 
 class verifyNumber extends StatefulWidget {
-  const verifyNumber({Key? key}) : super(key: key);
+  String number;
+  verifyNumber({super.key, required this.number});
 
   @override
   State<verifyNumber> createState() => _verifyNumberState();
@@ -15,6 +16,7 @@ class _verifyNumberState extends State<verifyNumber> {
   bool enable = false;
   bool buttonActive = false;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,9 @@ class _verifyNumberState extends State<verifyNumber> {
         backgroundColor: Colors.white24,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(
               Icons.arrow_back,
               color: Colors.pink,
@@ -95,7 +99,6 @@ class _verifyNumberState extends State<verifyNumber> {
                 onCompleted: (otp) {
                   print('Your Enter : $otp');
 
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) => const EnterPin()));
                 },
               ),
               const SizedBox(
