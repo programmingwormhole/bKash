@@ -1,21 +1,21 @@
 import 'package:bkash/pages/models/appBarModel.dart';
-import 'package:bkash/pages/sendMoney/confirmPaymentScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../models/contactList.dart';
+import 'COnfirmMobileRecharge.dart';
 
-class SendMoneyDetails extends StatelessWidget {
+class MobileRechargeDetailScreen extends StatelessWidget {
   String amount, phoneNmbr;
 
-  SendMoneyDetails({super.key, required this.amount, required this.phoneNmbr});
+  MobileRechargeDetailScreen(
+      {super.key, required this.amount, required this.phoneNmbr});
 
   @override
   Widget build(BuildContext context) {
     final mediaSize = MediaQuery.of(context).size;
     TextEditingController _button = TextEditingController();
-    TextEditingController _reff = TextEditingController();
     return Scaffold(
-      appBar: customPageBar('Send Money'),
+      appBar: customPageBar('Mobile Recharge'),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -57,8 +57,9 @@ class SendMoneyDetails extends StatelessWidget {
                               child: Row(
                                 children: [
                                   const CircleAvatar(
-                                    backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/147/147144.png'),
-                                    // backgroundColor: Colors.grey,
+                                    backgroundImage: NetworkImage(
+                                        'https://cdn-icons-png.flaticon.com/512/147/147144.png'),
+
                                   ),
                                   const SizedBox(
                                     width: 10,
@@ -114,6 +115,7 @@ class SendMoneyDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
+
                             children: [
                               const Text('Amount'),
                               Text('\$$amount'),
@@ -139,7 +141,6 @@ class SendMoneyDetails extends StatelessWidget {
                       const Text('Reference'),
 
                       TextFormField(
-                        controller: _reff,
                         cursorColor: Colors.pink,
                         decoration: InputDecoration(
                           border: InputBorder.none,
@@ -179,12 +180,8 @@ class SendMoneyDetails extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              confirmPayPage(
-                                                name: 'Unknow',
-                                                phoneNumber: phoneNmbr,
-                                                amount: amount,
-                                                reff: _reff.text,
-                                              )));
+                                              ConfirmMobileRecharge(reff: '', name: 'Unknown', phoneNumber: phoneNmbr, amount: amount,))
+                                  );
                                 }
                               },
                               icon: const Icon(

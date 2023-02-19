@@ -1,16 +1,20 @@
-import 'package:bkash/pages/sendMoney/successScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../models/AnimatedButton.dart';
-import '../models/contactList.dart';
 
-class confirmPayPage extends StatelessWidget {
+import 'SuccessScreen.dart';
+
+class ConfirmMobileRecharge extends StatelessWidget {
   String name;
   String phoneNumber;
   String amount;
   String reff;
 
-  confirmPayPage({required this.reff, required this.name, required this.phoneNumber, required this.amount});
+  ConfirmMobileRecharge(
+      {super.key, required this.reff,
+      required this.name,
+      required this.phoneNumber,
+      required this.amount});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +51,7 @@ class confirmPayPage extends StatelessWidget {
                           style: TextStyle(color: Colors.pink, fontSize: 18),
                           children: [
                         TextSpan(
-                            text: 'Send Money',
+                            text: 'Mobile Recharge',
                             style: TextStyle(
                                 color: Colors.pink,
                                 fontSize: 18,
@@ -59,7 +63,6 @@ class confirmPayPage extends StatelessWidget {
                   Row(
                     children: [
                       const CircleAvatar(
-
                         backgroundImage: NetworkImage(
                             'https://cdn-icons-png.flaticon.com/512/147/147144.png'),
                       ),
@@ -70,10 +73,10 @@ class confirmPayPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '$name',
-                            style: TextStyle(fontSize: 18),
+                            name,
+                            style: const TextStyle(fontSize: 18),
                           ),
-                          Text('$phoneNumber',
+                          Text(phoneNumber,
                               style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.black.withOpacity(0.5)))
@@ -106,7 +109,7 @@ class confirmPayPage extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            '\$${amount}.00 + \$00.00',
+                            '\$$amount.00 + \$00.00',
                             style:
                                 TextStyle(color: Colors.black.withOpacity(0.5)),
                           ),
@@ -114,18 +117,16 @@ class confirmPayPage extends StatelessWidget {
                       ),
                       IntrinsicHeight(
                           child: Row(
-                            children: <Widget>[
-
-                              VerticalDivider(
-                                color: Colors.black.withOpacity(1),
-                                width: 15,
-                              ),
-                              Text(''),
-                            ],
-                          )),
+                        children: <Widget>[
+                          VerticalDivider(
+                            color: Colors.black.withOpacity(1),
+                            width: 15,
+                          ),
+                          const Text(''),
+                        ],
+                      )),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-
                         children: [
                           Text(
                             'New Balance',
@@ -136,7 +137,6 @@ class confirmPayPage extends StatelessWidget {
                             height: 5,
                           ),
                           const Text('\$1758.00'),
-
                         ],
                       ),
                     ],
@@ -146,27 +146,27 @@ class confirmPayPage extends StatelessWidget {
                   ),
                   Text(
                     'Reference',
-                    style:
-                    TextStyle(color: Colors.black.withOpacity(0.7)),
+                    style: TextStyle(color: Colors.black.withOpacity(0.7)),
                   ),
                   const SizedBox(
                     height: 5,
                   ),
-                  Text('$reff'),
+                  Text(reff),
                 ],
               ),
             ),
           ),
           //Animated button
           AnimatedButton(
-            onComplete: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => SuccessScreen()));
+            onComplete: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RcgMobileSuccess()));
             },
           )
         ],
       ),
     );
   }
-
-  }
-
+}

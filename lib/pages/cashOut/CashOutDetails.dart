@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 import '../models/contactList.dart';
 
-class SendMoneyDetails extends StatelessWidget {
+class CashOutDetails extends StatelessWidget {
   String amount, phoneNmbr;
 
-  SendMoneyDetails({super.key, required this.amount, required this.phoneNmbr});
+  CashOutDetails({super.key, required this.amount, required this.phoneNmbr});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class SendMoneyDetails extends StatelessWidget {
     TextEditingController _button = TextEditingController();
     TextEditingController _reff = TextEditingController();
     return Scaffold(
-      appBar: customPageBar('Send Money'),
+      appBar: customPageBar('Cash Out'),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -65,7 +65,7 @@ class SendMoneyDetails extends StatelessWidget {
                                   ),
                                   Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         contactList[index]['name'],

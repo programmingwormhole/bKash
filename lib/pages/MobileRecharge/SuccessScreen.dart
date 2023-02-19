@@ -1,14 +1,14 @@
 import 'package:bkash/pages/HomePages/HomePage.dart';
 import 'package:flutter/material.dart';
 
-class SuccessScreen extends StatefulWidget {
-  const SuccessScreen({Key? key}) : super(key: key);
+class RcgMobileSuccess extends StatefulWidget {
+  const RcgMobileSuccess({Key? key}) : super(key: key);
 
   @override
-  State<SuccessScreen> createState() => _SuccessScreenState();
+  State<RcgMobileSuccess> createState() => _RcgMobileSuccessState();
 }
 
-class _SuccessScreenState extends State<SuccessScreen> {
+class _RcgMobileSuccessState extends State<RcgMobileSuccess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,19 +28,19 @@ class _SuccessScreenState extends State<SuccessScreen> {
                   children: [
                     RichText(
                         text: const TextSpan(
-                            text: 'Mobile Recharge ',
+                            text: 'Send Money ',
                             style: TextStyle(
                                 color: Colors.pink,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                             children: [
-                          TextSpan(
-                              text: 'Success',
-                              style: TextStyle(
-                                color: Colors.pink,
-                                fontSize: 18,
-                              ))
-                        ])),
+                              TextSpan(
+                                  text: 'Success',
+                                  style: TextStyle(
+                                    color: Colors.pink,
+                                    fontSize: 18,
+                                  ))
+                            ])),
                     Container(
                         height: 30,
                         width: 30,
@@ -97,7 +97,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
                         Text(
                           'Total',
                           style:
-                              TextStyle(color: Colors.black.withOpacity(0.7)),
+                          TextStyle(color: Colors.black.withOpacity(0.7)),
                         ),
                         const SizedBox(
                           height: 5,
@@ -109,7 +109,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
                         Text(
                           '\$500.00 + \$00.00',
                           style:
-                              TextStyle(color: Colors.black.withOpacity(0.5)),
+                          TextStyle(color: Colors.black.withOpacity(0.5)),
                         ),
                       ],
                     ),
@@ -119,7 +119,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
                         Text(
                           'New Balance',
                           style:
-                              TextStyle(color: Colors.black.withOpacity(0.7)),
+                          TextStyle(color: Colors.black.withOpacity(0.7)),
                         ),
                         const SizedBox(
                           height: 5,
@@ -148,7 +148,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
                         Text(
                           'Time',
                           style:
-                              TextStyle(color: Colors.black.withOpacity(0.7)),
+                          TextStyle(color: Colors.black.withOpacity(0.7)),
                         ),
                         const SizedBox(
                           height: 5,
@@ -162,7 +162,7 @@ class _SuccessScreenState extends State<SuccessScreen> {
                         Text(
                           'TRX ID',
                           style:
-                              TextStyle(color: Colors.black.withOpacity(0.7)),
+                          TextStyle(color: Colors.black.withOpacity(0.7)),
                         ),
                         const SizedBox(
                           height: 5,
@@ -199,8 +199,8 @@ class _SuccessScreenState extends State<SuccessScreen> {
                   height: 5,
                 ),
                 const Text('Reward Point', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18
                 ),
                 ),
                 const SizedBox(

@@ -46,13 +46,13 @@ class confirmPayPage extends StatelessWidget {
                           text: 'Confirm ',
                           style: TextStyle(color: Colors.pink, fontSize: 18),
                           children: [
-                        TextSpan(
-                            text: 'Send Money',
-                            style: TextStyle(
-                                color: Colors.pink,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold))
-                      ])),
+                            TextSpan(
+                                text: 'Send Money',
+                                style: TextStyle(
+                                    color: Colors.pink,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold))
+                          ])),
                   const SizedBox(
                     height: 30,
                   ),
@@ -96,7 +96,7 @@ class confirmPayPage extends StatelessWidget {
                           Text(
                             'Total',
                             style:
-                                TextStyle(color: Colors.black.withOpacity(0.7)),
+                            TextStyle(color: Colors.black.withOpacity(0.7)),
                           ),
                           const SizedBox(
                             height: 5,
@@ -108,7 +108,7 @@ class confirmPayPage extends StatelessWidget {
                           Text(
                             '\$${amount}.00 + \$00.00',
                             style:
-                                TextStyle(color: Colors.black.withOpacity(0.5)),
+                            TextStyle(color: Colors.black.withOpacity(0.5)),
                           ),
                         ],
                       ),
@@ -130,7 +130,7 @@ class confirmPayPage extends StatelessWidget {
                           Text(
                             'New Balance',
                             style:
-                                TextStyle(color: Colors.black.withOpacity(0.7)),
+                            TextStyle(color: Colors.black.withOpacity(0.7)),
                           ),
                           const SizedBox(
                             height: 5,
@@ -168,5 +168,5 @@ class confirmPayPage extends StatelessWidget {
     );
   }
 
-  }
+}
 

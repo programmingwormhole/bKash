@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     menuItem(
-                      'assets/HomePage/send_money.jpg',
+                      'assets/images/icons/sendMoney.png',
                       'Send Money',
                       () {
                         Navigator.push(
@@ -56,21 +56,21 @@ class _HomePageState extends State<HomePage> {
                                 builder: (context) => const SendMoneyScreen()));
                       },
                     ),
-                    menuItem('assets/HomePage/mobile_recharge.jpg', 'Recharge',
+                    menuItem(
+                        'assets/images/icons/mobileRecharge.png', 'Recharge',
                         () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const MobileRecharge()));
                     }),
-                    menuItem('assets/HomePage/cash_out.jpg', 'Cash Out', () {
+                    menuItem('assets/images/icons/cashOut.png', 'Cash Out', () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const CashOutScreen()));
                     }),
-                    menuItem('assets/HomePage/make_payment.jpg', 'Payments',
-                        () {
+                    menuItem('assets/images/icons/payment.png', 'Payments', () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -88,25 +88,27 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    menuItem('assets/HomePage/add_money.jpg', 'Add Money', () {
+                    menuItem('assets/images/icons/addMoney.png', 'Add Money',
+                        () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const AddMoneyScreen()));
                     }),
-                    menuItem('assets/HomePage/pay_bill.jpg', 'Pay Bill', () {
+                    menuItem('assets/images/icons/payBill.png', 'Pay Bill', () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const PayBillScreen()));
                     }),
-                    menuItem('assets/HomePage/tickets.jpg', 'Tickets', () {
+                    menuItem('assets/images/icons/remittance.png', 'Remittance',
+                        () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const TicketScreen()));
                     }),
-                    menuItem('assets/HomePage/more.jpg', 'More', () {
+                    menuItem('assets/images/icons/education.png', 'Edu.', () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(

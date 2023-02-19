@@ -2,13 +2,14 @@ import 'package:bkash/pages/models/appBarModel.dart';
 import 'package:bkash/pages/sendMoney/sendMoneyDetailScreen.dart';
 import 'package:flutter/material.dart';
 
-import '../models/contactList.dart';
+import 'CashOutDetails.dart';
 
-class AmountScreen extends StatelessWidget {
+
+class CashOutAmount extends StatelessWidget {
   String phoneNumber;
   String name;
 
-  AmountScreen({super.key, required this.phoneNumber, required this.name});
+  CashOutAmount({super.key, required this.phoneNumber, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class AmountScreen extends StatelessWidget {
 
     final mediaSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: customPageBar('Send Money'),
+      appBar: customPageBar('Cash Out'),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -68,7 +69,7 @@ class AmountScreen extends StatelessWidget {
                                   ),
                                   Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         name,
@@ -130,12 +131,12 @@ class AmountScreen extends StatelessWidget {
                             border: InputBorder.none,
                             suffixIcon: IconButton(
                                 onPressed: () {
-                                  if (_amount.text.length > 0) {
+                                  if (_amount.text.isNotEmpty) {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                SendMoneyDetails(
+                                                CashOutDetails(
                                                     amount: _amount.text,
                                                     phoneNmbr: phoneNumber)));
                                   }
@@ -152,9 +153,9 @@ class AmountScreen extends StatelessWidget {
                       ),
                       const Center(
                           child: Text(
-                        'Useable balance: \$1200.54',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      )),
+                            'Useable balance: \$1200.54',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          )),
                     ],
                   ),
                 ),

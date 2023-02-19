@@ -95,7 +95,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                      MaterialPageRoute(builder: (context) => const HomePage()));
                 },
                 child: const Text(
                   'Visit the apps!',

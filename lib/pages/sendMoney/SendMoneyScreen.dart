@@ -12,7 +12,7 @@ class SendMoneyScreen extends StatefulWidget {
 }
 
 class _SendMoneyScreenState extends State<SendMoneyScreen> {
-  TextEditingController _phoneNumber = TextEditingController();
+  final TextEditingController _phoneNumber = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final mediaSize = MediaQuery.of(context).size;
@@ -64,10 +64,9 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => AmountScreen(
-                                                  phoneNumber:
-                                                      _phoneNumber.text,
-                                                )));
+                                            builder: (_) => AmountScreen(
+                                                phoneNumber: _phoneNumber.text,
+                                                name: 'Unknown')));
                                   },
                                   icon: const Icon(
                                     Icons.arrow_forward,
@@ -108,29 +107,43 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(5.0),
-                            child: Row(
-                              children: [
-                                const CircleAvatar(
-                                  backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/147/147144.png'),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      contactList[index]['name'],
-                                      style: const TextStyle(fontSize: 18),
-                                    ),
-                                    Text(contactList[index]['number'],
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color:
-                                                Colors.black.withOpacity(0.5)))
-                                  ],
-                                )
-                              ],
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => AmountScreen(
+                                              phoneNumber: contactList[index]
+                                                  ['number'],
+                                              name: contactList[index]['name'],
+                                            )));
+                              },
+                              child: Row(
+                                children: [
+                                  const CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                        'https://cdn-icons-png.flaticon.com/512/147/147144.png'),
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        contactList[index]['name'],
+                                        style: const TextStyle(fontSize: 18),
+                                      ),
+                                      Text(contactList[index]['number'],
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black
+                                                  .withOpacity(0.5)))
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },
@@ -173,30 +186,44 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(5.0),
-                            child: Row(
-                              children: [
-                                const CircleAvatar(
-                                  backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/147/147144.png'),
-                                  // backgroundColor: Colors.grey,
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      contactList[index]['name'],
-                                      style: const TextStyle(fontSize: 18),
-                                    ),
-                                    Text(contactList[index]['number'],
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            color:
-                                                Colors.black.withOpacity(0.5)))
-                                  ],
-                                )
-                              ],
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => AmountScreen(
+                                              phoneNumber: contactList[index]
+                                                  ['number'],
+                                              name: contactList[index]['name'],
+                                            )));
+                              },
+                              child: Row(
+                                children: [
+                                  const CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                        'https://cdn-icons-png.flaticon.com/512/147/147144.png'),
+                                    // backgroundColor: Colors.grey,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        contactList[index]['name'],
+                                        style: const TextStyle(fontSize: 18),
+                                      ),
+                                      Text(contactList[index]['number'],
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              color: Colors.black
+                                                  .withOpacity(0.5)))
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         },

@@ -1,22 +1,28 @@
 import 'package:bkash/pages/models/appBarModel.dart';
-import 'package:bkash/pages/sendMoney/sendMoneyDetailScreen.dart';
 import 'package:flutter/material.dart';
 
 import '../models/contactList.dart';
+import 'MobileRechargeDetailScreen.dart';
 
-class AmountScreen extends StatelessWidget {
+class RcgAmountScreen extends StatefulWidget {
   String phoneNumber;
-  String name;
 
-  AmountScreen({super.key, required this.phoneNumber, required this.name});
+  RcgAmountScreen({super.key, required this.phoneNumber});
 
   @override
+  State<RcgAmountScreen> createState() => _RcgAmountScreenState();
+}
+
+class _RcgAmountScreenState extends State<RcgAmountScreen> {
+  @override
   Widget build(BuildContext context) {
+    bool activeBtn = false;
     TextEditingController _amount = TextEditingController();
+    TextEditingController _name = TextEditingController();
 
     final mediaSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: customPageBar('Send Money'),
+      appBar: customPageBar('Mobile Recharge'),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -61,7 +67,8 @@ class AmountScreen extends StatelessWidget {
                                 children: [
                                   const CircleAvatar(
                                     // backgroundColor: Colors.grey,
-                                    backgroundImage: NetworkImage('https://cdn-icons-png.flaticon.com/512/147/147144.png'),
+                                    backgroundImage: NetworkImage(
+                                        'https://cdn-icons-png.flaticon.com/512/147/147144.png'),
                                   ),
                                   const SizedBox(
                                     width: 10,
@@ -71,10 +78,10 @@ class AmountScreen extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        name,
+                                        contactList[index]['name'],
                                         style: const TextStyle(fontSize: 18),
                                       ),
-                                      Text(phoneNumber,
+                                      Text(widget.phoneNumber,
                                           style: TextStyle(
                                               fontSize: 15,
                                               color: Colors.black
@@ -96,7 +103,7 @@ class AmountScreen extends StatelessWidget {
               child: Container(
                 margin: const EdgeInsets.only(top: 4),
                 width: mediaSize.width - 30,
-                height: 170,
+                height: 200,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.only(
@@ -117,6 +124,61 @@ class AmountScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              setState(() {
+                                activeBtn = true;
+                              });
+                            },
+                            style: TextButton.styleFrom(
+                                backgroundColor:
+                                    activeBtn == true ? Colors.pink : Colors.white,
+                                padding:
+                                    const EdgeInsets.only(left: 40, right: 40),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(40)),
+                                side: const BorderSide(
+                                    color: Colors.pink, width: 2)),
+                            child: const Text(
+                              '20',
+                              style: TextStyle(color: Colors.pink),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                backgroundColor: Colors.pink,
+                                padding:
+                                    const EdgeInsets.only(left: 40, right: 40),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(40)),
+                                side: const BorderSide(
+                                    color: Colors.pink, width: 2)),
+                            child: const Text(
+                              '30',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                                padding:
+                                    const EdgeInsets.only(left: 40, right: 40),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(40)),
+                                side: const BorderSide(
+                                    color: Colors.pink, width: 2)),
+                            child: const Text(
+                              '50',
+                              style: TextStyle(color: Colors.pink),
+                            ),
+                          ),
+                        ],
+                      ),
                       TextFormField(
                         cursorColor: Colors.pink,
                         textAlign: TextAlign.center,
@@ -130,16 +192,16 @@ class AmountScreen extends StatelessWidget {
                             border: InputBorder.none,
                             suffixIcon: IconButton(
                                 onPressed: () {
-                                  if (_amount.text.length > 0) {
+                                  if (_amount.text.isNotEmpty) {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                SendMoneyDetails(
+                                                MobileRechargeDetailScreen(
                                                     amount: _amount.text,
-                                                    phoneNmbr: phoneNumber)));
+                                                    phoneNmbr:
+                                                        widget.phoneNumber)));
                                   }
-
                                 },
                                 icon: const Icon(
                                   Icons.arrow_forward,
