@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_bkash/src/utils/api_helper.dart';
+import 'package:bkash/src/utils/api_helper.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 

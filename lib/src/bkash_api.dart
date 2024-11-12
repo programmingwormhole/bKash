@@ -1,8 +1,8 @@
-import 'package:flutter_bkash/src/apis/create_agreement_api.dart';
-import 'package:flutter_bkash/src/apis/pay_with_agreement_api.dart';
-import 'package:flutter_bkash/src/apis/pay_without_agreement_api.dart';
-import 'package:flutter_bkash/src/apis/token_api.dart';
-import 'package:flutter_bkash/src/bkash_credentials.dart';
+import 'package:bkash/src/apis/create_agreement_api.dart';
+import 'package:bkash/src/apis/pay_with_agreement_api.dart';
+import 'package:bkash/src/apis/pay_without_agreement_api.dart';
+import 'package:bkash/src/apis/token_api.dart';
+import 'package:bkash/src/bkash_credentials.dart';
 import 'package:fpdart/fpdart.dart';
 
 import 'apis/models/create_agreement/create_agreement_response_model.dart';

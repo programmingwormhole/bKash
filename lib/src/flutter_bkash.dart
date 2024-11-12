@@ -1,15 +1,15 @@
+import 'package:bkash/src/flutter_bkash_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bkash/src/apis/models/token_response_model.dart';
-import 'package:flutter_bkash/src/bkash_api.dart';
-import 'package:flutter_bkash/src/bkash_credentials.dart';
-import 'package:flutter_bkash/src/flutter_bkash_view.dart';
+import 'package:bkash/src/apis/models/token_response_model.dart';
+import 'package:bkash/src/bkash_api.dart';
+import 'package:bkash/src/bkash_credentials.dart';
 import 'package:fpdart/fpdart.dart';
 
 import 'bkash_payment_response.dart';
 import 'bkash_payment_status.dart';
 import 'utils/failure.dart';
 
-class FlutterBkash {
+class Bkash { 
   /// For printing Bkash responses
   final bool logResponse;
 
@@ -22,7 +22,7 @@ class FlutterBkash {
   // Token for calling bkash apis
   Either<BkashFailure, TokenResponseModel>? _token;
 
-  FlutterBkash({
+  Bkash({
     BkashCredentials? bkashCredentials,
     this.logResponse = false,
   }) : _bkashApi = BkashApi(
@@ -71,7 +71,7 @@ class FlutterBkash {
             final bkashPaymentStatus = await Navigator.push<BkashPaymentStatus>(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => FlutterBkashView(
+                    builder: (context) => BkashView(
                       bkashURL: apiRes.bkashURL,
                       failureCallbackURL: apiRes.failureCallbackURL,
                       successCallbackURL: apiRes.successCallbackURL,
@@ -149,7 +149,7 @@ class FlutterBkash {
             final bkashPaymentStatus = await Navigator.push<BkashPaymentStatus>(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => FlutterBkashView(
+                    builder: (context) => BkashView(
                       bkashURL: agrRes.bkashURL,
                       failureCallbackURL: agrRes.failureCallbackURL,
                       successCallbackURL: agrRes.successCallbackURL,
@@ -228,7 +228,7 @@ class FlutterBkash {
             final bkashPaymentStatus = await Navigator.push<BkashPaymentStatus>(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => FlutterBkashView(
+                    builder: (context) => BkashView(
                       bkashURL: apiRes.bkashURL,
                       failureCallbackURL: apiRes.failureCallbackURL,
                       successCallbackURL: apiRes.successCallbackURL,

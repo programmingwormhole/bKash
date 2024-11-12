@@ -1,4 +1,4 @@
-library flutter_bkash;
+library bkash;
 
 export 'src/flutter_bkash.dart';
 export 'src/bkash_credentials.dart';

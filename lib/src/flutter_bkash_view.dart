@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bkash/src/bkash_payment_status.dart';
+import 'package:bkash/src/bkash_payment_status.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 typedef PaymentStatus = void Function(BkashPaymentStatus bkashPaymentStatus);
 
-class FlutterBkashView extends StatefulWidget {
+class BkashView extends StatefulWidget {
   final String bkashURL;
   final String successCallbackURL;
   final String failureCallbackURL;
   final String cancelledCallbackURL;
 
-  const FlutterBkashView({
+  const BkashView({
     Key? key,
     required this.bkashURL,
     required this.successCallbackURL,
@@ -19,10 +19,10 @@ class FlutterBkashView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  FlutterBkashViewState createState() => FlutterBkashViewState();
+  BkashViewState createState() => BkashViewState();
 }
 
-class FlutterBkashViewState extends State<FlutterBkashView> {
+class BkashViewState extends State<BkashView> {
   late WebViewController _webViewController;
 
   @override
