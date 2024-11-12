@@ -1,5 +1,5 @@
 
-<p align="center">This is fixed version of bkash package by Codeboxr team.<p>
+<p align="center">This is fixed version of flutter_bkash package by Codeboxr team. All credit goes to Codeboxr team.<p>
 
 <p align="center" >
   <img src="https://www.bkash.com/images/favicon.png">
