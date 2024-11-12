@@ -19,7 +19,6 @@ This is a [Flutter package](https://pub.dartlang.org/packages/bkash) for [bKash]
 
 > :warning: Please note that, you have to contact with bKash sales team for any kind of dev or production access keys or tokens. We don't provide any test account or access keys or don't contact us for such
 
-Check the package in <a target="_blank" href="https://github.com/codeboxrcodehub/flutter-bkash" rel="noopener">github</a> and also available in <a href="https://pub.dartlang.org/packages/bkash" rel="noopener nofollow" target="_blank">flutter/dart package</a>
 ## How to use:
 Depend on it, Run this command With Flutter:
 ```
@@ -51,7 +50,7 @@ Official Link for API documentation and demo checkout
 final Bkash = Bkash(logResponse: true);
 ```
 > If you want to see your request log make logResponse true while creating instance of bKash package.
- 
+
 ***Production*** 
 ```
 final Bkash = Bkash(
