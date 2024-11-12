@@ -48,8 +48,10 @@ Official Link for API documentation and demo checkout
 
 ***Sandbox***
 ```
-final Bkash = Bkash();
+final Bkash = Bkash(logResponse: true);
 ```
+> If you want to see your request log make logResponse true while creating instance of bKash package.
+ 
 ***Production*** 
 ```
 final Bkash = Bkash(
