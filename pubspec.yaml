@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ^4.2.2
+  webview_flutter:
   http:
   fpdart: ^0.6.0
 
