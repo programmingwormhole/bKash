@@ -1,6 +1,6 @@
 name: bkash
 description: Flutter package for payment gateway service bKash (Bangladesh). bKash payment easy to implement through this package on your flutter project.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/programmingwormhole/bkash
 
 environment:
